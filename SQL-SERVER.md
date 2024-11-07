@@ -184,8 +184,6 @@ SQL-SERVER
 
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298476637150642236/image.png?ex=6729861a&is=6728349a&hm=f13c6c06f66a574cf2959ff1d4c24f9463ad8648f20ef1241940f1ce7222ab8f&=)
 
-
-
 #### 「一對多」的轉換
 
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298478060370264114/image.png?ex=6729876e&is=672835ee&hm=a6a776bb5ceca1f4ae946035757ffd6da1066de040a70a5eeb49813542db8e3e&=)
@@ -196,12 +194,71 @@ SQL-SERVER
 
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298479152558768140/2024-10-23_105014.png?ex=67298872&is=672836f2&hm=6a551daa0e31859d294f450478c528309959d201f945af62a856908495ff4496&=)
 
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298479985849536512/image.png?ex=672adab9&is=67298939&hm=7d53e18188b215539571aad7624cdaa3df76a06ac5800dc418da3edcc7b9c67f&=)
+
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298480144763060316/image.png?ex=672adadf&is=6729895f&hm=9ba1ab66a07f595fe0eeedff58e51d47e01ebcd6730705a86fdc47246bc2136f&=)
+
+客戶 =>客戶編號 主鍵 copy to 訂單 =>客戶編號  連外鍵
+
+=============================================================
+
+#### ⓼ 資料庫正規化
+
+1、不當設計所造成的異動操作
+
+**處理**做出適當切割後，可方便查詢且不容易出錯
+
+***正規化 * 可為資料完整性、隱私性、容易維護 、資料不易重複、查詢容易**
+
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298488428911923290/image.png?ex=672ae296&is=67299116&hm=68387f1abb8a33280dd42ba92b3efe3ccefa9cb095ac037664d1e42fd5ba19ba&=)
+
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298488500357959781/image.png?ex=672ae2a7&is=67299127&hm=c4eefa86791925098de79556aa604675edf7298d478fb7303eb3c02a7422f56b&=)
+
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298488549439574047/image.png?ex=672ae2b2&is=67299132&hm=a9a2d291b2aca27c6ad8a2e352c7eac71c1ce4c185662de7590cd50eaced1abc&=)
 
 
 
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298493812368474162/image.png?ex=672c3919&is=672ae799&hm=3ae04f0c6e640e242cfcf5e509875b676353d0b0b0e019fbf55d0354c473bc7f&=)
 
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298495920446505023/image.png?ex=672c3b10&is=672ae990&hm=61bc0550d75934d93824a574489f91b984ff984a0d9e7a83e02cad0289ae3346&=)
 
+相依性 ：產品編號 =>產品名稱 
 
+相依性：供應商編號+產品編號 => 單價
 
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298497497236242515/image.png?ex=672c3c88&is=672aeb08&hm=eb9f366582515c6b97f8c484bc344f8d1de229166201af4cc22b4c7481472ec9&=)
 
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1298498062452523069/image.png?ex=672c3d0f&is=672aeb8f&hm=8e5d260fee2dfdbd52297c62460c729c4711243961ecc7ddd723ba0969b7c682&=)
 
+=======================================================================
+
+### **SQL Server的相關資料庫**
+
+系統資料庫：系統層級 
+
+AdventureWorks：範例 
+
+ReportServer：報表服務 
+
+使用者自建資料庫：CHXX範例資料庫 
+
+master： 系統層級、核心 =======================================================================**<mark>msdb：</mark>**
+
+**功能：**
+
+讓SQL Server Agent 服務使用，讓代理程式，記錄：排程警告、排程作業、其他相關作業
+
+SQL Server Agent 執行排程管理工作
+核心資料庫，如果資料庫損毀、SQL Server將無法正常啟動
+記錄：登入帳號、被管理的端點server、分散式處理的server，以及SQL Server 系統中所有的設定項目。
+master資料庫記錄所有SQL Server所有的資料庫資訊，包含資料庫的實體檔案位置、SQL Server初始資訊
+<mark>Model：</mark>
+
+目的：當成所有新建資料所參考的一個樣版資料庫
+so新增一個資料庫時系統會參考此model資料庫。
+
+<mark>tempdb :</mark>
+
+全域性、暫時性儲存資料，
+使用者在經過龐大資料計算時暫時儲存的一個資源
+暫存性，如果系統重新啟動之後，全部被清除掉
