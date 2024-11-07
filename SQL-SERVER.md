@@ -367,19 +367,16 @@ Step3 回到檔案 =>
 
 ![](https://cdn.discordapp.com/attachments/1303971581025980426/1304085920986697809/image.png?ex=672e1c28&is=672ccaa8&hm=418399debebb1e641393974cd51455a73c55974eee69747b8fb4f1acd4a6f88a&)
 
-
-
 ![](https://cdn.discordapp.com/attachments/1303971581025980426/1304086818131546133/image.png?ex=672e1cfe&is=672ccb7e&hm=23deee8602947068cb30bac3d711c92c2a6c892107c9de4b9648de99ac09a07a&)
 
 FILE 資料列
 
 LOG FILE 記錄檔
 
-
-
 ![](https://cdn.discordapp.com/attachments/1303971581025980426/1304089450799824967/image.png?ex=672e1f71&is=672ccdf1&hm=cd5a734750e7093ec12d132b7231022e4a8efdb72348f91f9df07683d0522885&=)
 
 ```建立資料庫並設定PRIMARY檔案及LOG檔案
+。建立資料庫並設定PRIMARY檔案及LOG檔案
 CREATE DATABASE [圖書借閱管理5-5]​
 
 ON ​
@@ -394,31 +391,35 @@ LOG ON​
 ```
 
 ```新增檔案群組G1​
+。新增檔案群組G1​
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD FILEGROUP G1​
-
 ```
 
 ```新增檔案群組G2​
+。新增檔案群組G2​
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD FILEGROUP G5​
 ```
 
 ```要移除群組G5
+。要移除群組G5
 ALTER DATABASE [圖書借閱管理5-5]​
 
 REMOVE FILEGROUP G5
 ```
 
 ```增加檔案群組G2
+。增加檔案群組G2
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD FILEGROUP G2​
 ```
 
 ```同時新增兩個檔案(G11、G12)至群組G1​
+。同時新增兩個檔案(G11、G12)至群組G1​
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD FILE  (name=G11,filename='C:\5-5\G11.NDF',size=5MB,maxsize=10GB,filegrowth=20%),        ​
@@ -429,6 +430,7 @@ TO FILEGROUP G1​
 ```
 
 ```同時新增兩個檔案(G21、G22)至群組G2
+。同時新增兩個檔案(G21、G22)至群組G2
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD FILE  (name=G21,filename='C:\5-5\G21.NDF',size=5MB,maxsize=10GB,filegrowth=20%),         ​
@@ -439,6 +441,7 @@ TO FILEGROUP G2​
 ```
 
 ```新增一個檔案到PRIMARY群組
+。新增一個檔案到PRIMARY群組
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD FILE (name=P2,Filename='C:\5-5\P2.NDF',size=5MB,maxsize=10GB,filegrowth=20%) ​
@@ -448,13 +451,18 @@ TO FILEGROUP [PRIMARY]​
 
 **[注意] 由於PRIMARY是保留字，所以要用中括弧 [ ] 前後括起來，否則會發生語法錯誤​**
 
+
+
 ```新增一個記錄檔
+。新增一個記錄檔
 ALTER DATABASE [圖書借閱管理5-5]​
 
 ADD LOG FILE  (name=Log2,filename='C:\5-5\Log2.LDF',size=5MB,maxsize=10GB,filegrowth=20%)​
+
 ```
 
-```變更原本已建立的檔案格式(maxsize：5 變10、filegrowth：10% 變 20% )
+```變更原本已建立的檔案格式(maxsize：5變成10、filegrowth：10% 變成 20%)
+。變更原本已建立的檔案格式(maxsize：5變成10、filegrowth：10% 變成 20%)
 ALTER DATABASE [圖書借閱管理5-5]​
 
 MODIFY FILE (name=P1,maxsize=10GB,filegrowth=20%)
@@ -465,7 +473,8 @@ ALTER DATABASE [圖書借閱管理5-5]​
 MODIFY FILE (name=Log1,maxsize=10GB,filegrowth=20%)
 ```
 
-```更改資料庫庫名稱(5-5 變 55)
+```更改資料庫庫名稱(5-5變成55)
+。更改資料庫庫名稱(5-5變成55)
 ALTER DATABASE [圖書借閱管理5-5]​
 
 MODIFY NAME=圖書借閱管理55​
