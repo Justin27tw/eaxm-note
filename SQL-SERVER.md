@@ -216,8 +216,6 @@ SQL-SERVER
 
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298488549439574047/image.png?ex=672ae2b2&is=67299132&hm=a9a2d291b2aca27c6ad8a2e352c7eac71c1ce4c185662de7590cd50eaced1abc&=)
 
-
-
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298493812368474162/image.png?ex=672c3919&is=672ae799&hm=3ae04f0c6e640e242cfcf5e509875b676353d0b0b0e019fbf55d0354c473bc7f&=)
 
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298495920446505023/image.png?ex=672c3b10&is=672ae990&hm=61bc0550d75934d93824a574489f91b984ff984a0d9e7a83e02cad0289ae3346&=)
@@ -262,3 +260,213 @@ so新增一個資料庫時系統會參考此model資料庫。
 全域性、暫時性儲存資料，
 使用者在經過龐大資料計算時暫時儲存的一個資源
 暫存性，如果系統重新啟動之後，全部被清除掉
+
+=======================================================================
+
+#### <mark>建立資料庫</mark>
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304061620259127387/image.png?ex=672e0586&is=672cb406&hm=dde96a2a5a935e748efdd3cf64aa894cf184108acb4f71b9770ae922acc5c7d9&=)
+
+<img src="https://cdn.discordapp.com/attachments/1303971581025980426/1304060412911685683/image.png?ex=672e0466&is=672cb2e6&hm=8c376a7f1a376fed09334ad941ae8db06df71450f7359e092d08a4ca49717aa8&=" title="" alt="" width="686">
+
+<img src="https://cdn.discordapp.com/attachments/1303971581025980426/1304065950999511133/image.png?ex=672e098f&is=672cb80f&hm=eeb0a7714fe3334bdc9955a860c4e7da24bd9d8647e641f2a3dba7fac268a319&" title="" alt="" width="670">
+
+CREATE DATABASE {資料庫名稱}
+
+[ ON [PRIMARY] 資料檔規格清單]
+
+[ LOG ON 交易記錄檔規格清單]
+
+**ON：** 資料庫儲存資料的磁碟檔案
+
+**PRIMARY：** 後面承接PRIMARY群組內的資料檔案定義
+
+。**<filespec>：** 定義檔案的詳細規格，包括項目如下：
+​===========================================
+**。SIZE=size：** 
+指定初始建立的檔案大小，可加上檔案大小的單位，包括KB、MB(預設單位)、GB和TB。
+沒有設定此項目時，資料檔的預設初始大小為8MB​
+
+==========================================
+
+**。MAXSIZE=maxsize | UNLIMITED：** 
+設定該檔案能自動成長的最大容量的上限。可使用的單位包括KB、MB(預設單位)、GB和TB，例如：MAXSIZE=20或MAXSIZE=20MB是相同意義。亦可不限制上限大小，直到整個儲存空間存滿為止，可以設定成MAXSIZE=UNLIMITED
+
+===========================================
+
+。FILEGROWTH=grow_increment：
+當檔案容量已經發生不足現象(快超過SIZE)，且該檔案的容量尚未超過MAXSIZE所設定的大小時
+
+**=>設定方式有以下三種：**
+**。不自動成長：** 直接設成0即可，FILEGROWTH=0​
+**。以指定大小成長**，給定成長大小的數值並加上單位，可用單位為KB、MB(預設單位)、GB和TB​。
+**。以百分比成長**，給定成長大小的數值並加上百分比的符號%​
+若此項目被省略不設定時，預設情形下，資料檔會以1MB成長，記錄檔會以10% 成長​
+
+=======================================================================
+
+。<filegroup>：定義PRIMARY以外的檔案群組，包括檔案群組名稱，以及該檔案群組下的所有檔案定義​
+
+=======================================================================
+
+。LOG ON：後面承接的是該資料庫儲存記錄檔(log file)的檔案定義
+
+=======================================================================
+
+##### 注意 ! !
+
+用DML建立 資料庫名稱​，舉例：
+
+**CREATE DATABASE [圖書借閱管理5-1]**
+
+----------------------------------------------------------------------------------------------------------------------------
+
+凡是<u>資料庫名稱、資料表或資料列</u>使用到<mark>**特殊符號或中間有空白時**</mark>，該名稱必須加上[ ]。在此例中，因為 **<u>資料庫名稱使用特殊符號『-』</u>**，所以在資料庫的名稱前後要使用中括弧 [ ] 前後括起來，否則會發生語法上的錯誤​。
+
+=======================================================================
+
+用語法建立資料庫
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304070351872852011/241107_1.png?ex=672e0da8&is=672cbc28&hm=8fb079a82cdd99d3a371f6793106c22879ea890ee2a893f90fd2f521205d5d29&=)
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304072049286840350/image.png?ex=672e0f3d&is=672cbdbd&hm=58a924fff204681e09780ee7a888cfa466eb8eae666d76d57c8ff33af408f2b1&=)
+
+。請依上圖建立資料庫依語法建立：
+
+<img src="https://cdn.discordapp.com/attachments/1303971581025980426/1304076063672111124/image.png?ex=672e12fa&is=672cc17a&hm=1fb366f8383f77cfad8c5cb489a50c3cc62144e05d5f3913b69f7f14d3232bb4&=" title="" alt="" width="723">
+
+#### **注意如果是建立新的資料庫!!!!**
+
+#### **記得回到左側「物件總管」最上層點擊後「重新整理」**
+
+<img src="https://cdn.discordapp.com/attachments/1303971581025980426/1304078053177298974/image.png?ex=672e14d4&is=672cc354&hm=b847bb3d2c7e78b2883ae722f725b4c27fdb41e9e3507ebba39158de2d5a4f67&=" title="" alt="" width="698">
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304082879982338098/image.png?ex=672e1953&is=672cc7d3&hm=810a1fb759948070f1815f237e87d03cbcb44fa56ec63ca068e0cd082e547294&=)
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304082078006251562/image.png?ex=672e1894&is=672cc714&hm=08bebe5706a05d8e08aa7e1fa3bc4a5db3b06f516d76320dbd921f9731d14ea2&)
+
+====================================================================
+
+##### 新增群組：
+
+**若是要再擴建兩個群組G1 與G2，分別各有兩個檔案G11、G12 以及G21、G22**
+
+<mark>步驟：</mark>
+
+Step1點擊「屬性」
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304084063803670578/image.png?ex=672e1a6d&is=672cc8ed&hm=8caa5776bd0816e04a7f57e9df38aafd4cc5a3378532f88821cd76e3b245075c&)
+
+Step2 檔案群組=>新增檔案群組 並輸入G1、G2
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304084273111765184/image.png?ex=672e1a9f&is=672cc91f&hm=43b54f6bdab8045e65f08b8b17ee3a9f6a75ef44cc8847b212609b6e2cc0d449&=)
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304084780576538738/image.png?ex=672e1b18&is=672cc998&hm=a52642a13bbe585d775cb2bd3a2e9fc078a5bfc37e56d40d986b1fa2ba030efd&=)
+
+Step3 回到檔案 =>
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304085920986697809/image.png?ex=672e1c28&is=672ccaa8&hm=418399debebb1e641393974cd51455a73c55974eee69747b8fb4f1acd4a6f88a&)
+
+
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304086818131546133/image.png?ex=672e1cfe&is=672ccb7e&hm=23deee8602947068cb30bac3d711c92c2a6c892107c9de4b9648de99ac09a07a&)
+
+FILE 資料列
+
+LOG FILE 記錄檔
+
+
+
+![](https://cdn.discordapp.com/attachments/1303971581025980426/1304089450799824967/image.png?ex=672e1f71&is=672ccdf1&hm=cd5a734750e7093ec12d132b7231022e4a8efdb72348f91f9df07683d0522885&=)
+
+```建立資料庫並設定PRIMARY檔案及LOG檔案
+CREATE DATABASE [圖書借閱管理5-5]​
+
+ON ​
+
+PRIMARY​
+
+      (name=P1,filename='C:\5-5\P1.MDF',size=5MB,maxsize=5GB,filegrowth=10%) ​
+
+LOG ON​
+
+      (name=Log1,filename='C:\5-5\Log1.LDF',size=5MB,maxsize=5GB,filegrowth=10%)​
+```
+
+```新增檔案群組G1​
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD FILEGROUP G1​
+
+```
+
+```新增檔案群組G2​
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD FILEGROUP G5​
+```
+
+```要移除群組G5
+ALTER DATABASE [圖書借閱管理5-5]​
+
+REMOVE FILEGROUP G5
+```
+
+```增加檔案群組G2
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD FILEGROUP G2​
+```
+
+```同時新增兩個檔案(G11、G12)至群組G1​
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD FILE  (name=G11,filename='C:\5-5\G11.NDF',size=5MB,maxsize=10GB,filegrowth=20%),        ​
+
+                  (name=G12,filename='C:\5-5\G12.NDF',size=5MB,maxsize=10GB,filegrowth=20%)​
+
+TO FILEGROUP G1​
+```
+
+```同時新增兩個檔案(G21、G22)至群組G2
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD FILE  (name=G21,filename='C:\5-5\G21.NDF',size=5MB,maxsize=10GB,filegrowth=20%),         ​
+
+                  (name=G22,filename='C:\5-5\G22.NDF',size=5MB,maxsize=10GB,filegrowth=20%)​
+
+TO FILEGROUP G2​
+```
+
+```新增一個檔案到PRIMARY群組
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD FILE (name=P2,Filename='C:\5-5\P2.NDF',size=5MB,maxsize=10GB,filegrowth=20%) ​
+
+TO FILEGROUP [PRIMARY]​
+```
+
+**[注意] 由於PRIMARY是保留字，所以要用中括弧 [ ] 前後括起來，否則會發生語法錯誤​**
+
+```新增一個記錄檔
+ALTER DATABASE [圖書借閱管理5-5]​
+
+ADD LOG FILE  (name=Log2,filename='C:\5-5\Log2.LDF',size=5MB,maxsize=10GB,filegrowth=20%)​
+```
+
+```變更原本已建立的檔案格式(maxsize：5 變10、filegrowth：10% 變 20% )
+ALTER DATABASE [圖書借閱管理5-5]​
+
+MODIFY FILE (name=P1,maxsize=10GB,filegrowth=20%)
+​
+
+ALTER DATABASE [圖書借閱管理5-5]​
+
+MODIFY FILE (name=Log1,maxsize=10GB,filegrowth=20%)
+```
+
+```更改資料庫庫名稱(5-5 變 55)
+ALTER DATABASE [圖書借閱管理5-5]​
+
+MODIFY NAME=圖書借閱管理55​
+```
