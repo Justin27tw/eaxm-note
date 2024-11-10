@@ -258,8 +258,6 @@ SQL-SERVER
 
 圖片LINK： https://drive.google.com/file/d/1jbQ8hAiqGjrlsyiAyMN-nRRsZCRZJaeD/view?usp=drive_link
 
-
-
 相依性 ：產品編號 =>產品名稱 
 
 相依性：供應商編號+產品編號 => 單價
@@ -441,9 +439,11 @@ Step3 回到檔案 =>
 
 圖片LINK： https://drive.google.com/file/d/1RqDDYHew7U3oI0jljRoYDJKw6_OVHixn/view?usp=drive_link
 
-FILE 資料列
+###### 解釋：
 
-LOG FILE 記錄檔
+。FILE 資料列
+
+。LOG FILE 記錄檔
 
 ![](https://cdn.discordapp.com/attachments/1303971581025980426/1304089450799824967/image.png?ex=672e1f71&is=672ccdf1&hm=cd5a734750e7093ec12d132b7231022e4a8efdb72348f91f9df07683d0522885&=)
 
