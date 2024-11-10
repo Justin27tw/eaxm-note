@@ -4,7 +4,7 @@
 
 作業系統與應用 30%
 
-SQL SERVER資料庫 95%
+SQL SERVER資料庫 99%
 
 元宇宙Unity 5%
 
