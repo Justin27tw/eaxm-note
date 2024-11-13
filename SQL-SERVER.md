@@ -49,11 +49,11 @@ SQL-SERVER
   。這種方式的優點是可以從一個<mark>資料表中的欄位</mark>， 透過<mark>資料表的關聯</mark>， 而<mark>找到另一個資料表中的資料</mark>
   
   。關聯式資料庫必須由資料庫設計者來設計、建立、及管理關聯​
-
+  
   ![](https://cdn.discordapp.com/attachments/1293405178409779201/1305861854488432736/image.png?ex=6734921f&is=6733409f&hm=aa19001ad7b936dad9300e80a9f4c1dd90d45896aba496af5c548395a17b3dca&=)
-
+  
   圖片Link： https://meee.com.tw/fbALqZr
-
+  
   ----------------------------------------------------------------------------------
 
 - 物件導向資料庫
@@ -206,10 +206,6 @@ SQL-SERVER
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1305872424142901319/image.png?ex=67349bf7&is=67334a77&hm=54f00e46944b3013eb96fbe495ea41fde461751b4b40a19ba6c4c3b56175673f&=)
 
 圖片Link： https://meee.com.tw/oU1ssz3
-
-
-
-
 
 ### ⓵Key的種類
 
@@ -490,8 +486,6 @@ SQL-SERVER
 ![](https://cdn.discordapp.com/attachments/1293405178409779201/1298498062452523069/image.png?ex=672c3d0f&is=672aeb8f&hm=8e5d260fee2dfdbd52297c62460c729c4711243961ecc7ddd723ba0969b7c682&=)
 
 圖片LINK： https://drive.google.com/file/d/18MV3Ht-tBBXEChfTuNCYaKegZ_-4qWZd/view?usp=drive_link
-
-
 
 #### 。正規化
 
@@ -822,6 +816,6 @@ MODIFY NAME=圖書借閱管理55​
    (2)學生實體有學號、學生姓名、出生年月日、年齡、地址、電話及專長等屬性，其中學號為鍵屬性、年齡需要利用出生年月日導出來，而學生有兩個以上的專長。  
    (3)課程實體有課程編號、課程名稱、學分數等屬性，課程編號為鍵屬性。
 
-![實體關係圖解答.png](C:\Users\88697\Downloads\實體關係圖解答.png)
+![](https://cdn.discordapp.com/attachments/1293405178409779201/1306084170795323492/image.png?ex=6735612c&is=67340fac&hm=17de5645601d006503416a4c7eb2503e95c161d8acbeeed74fcfe5e03cc3fed3&=)
 
-圖片Link： https://meee.com.tw/6A9bwuy
+圖片Link：  https://meee.com.tw/RTME8ZC
