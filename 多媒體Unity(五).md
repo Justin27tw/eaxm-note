@@ -31,7 +31,7 @@ Land right左橫向
 4、圖形邊界矩形優於弧形  
 5、AR 圖片格式建議以jpg為主  
 
-
+安卓的相關套件：
 圖片Link： https://meee.com.tw/Jj96ZGn
 
 。什麼軟體設定開發AR APP： vuforia engine
