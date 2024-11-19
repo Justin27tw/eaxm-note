@@ -720,10 +720,6 @@ Step3 回到檔案 =>
 
 圖片LINK：  https://drive.google.com/file/d/1bkxuIaljl3bcDTHHglZImg8FuqRI7IK-/view?usp=drive_link
 
-
-
-
-
 #### DML語法：
 
 ```建立資料庫並設定PRIMARY檔案及LOG檔案
