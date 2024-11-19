@@ -576,7 +576,7 @@ so新增一個資料庫時系統會參考此model資料庫。
 
 =======================================================================
 
-#### <mark>建立資料庫 DDL語法</mark>
+#### <mark>。建立資料庫 DDL語法</mark>
 
 ![](https://cdn.discordapp.com/attachments/1303971581025980426/1304061620259127387/image.png?ex=672e0586&is=672cb406&hm=dde96a2a5a935e748efdd3cf64aa894cf184108acb4f71b9770ae922acc5c7d9&=)
 
@@ -720,6 +720,12 @@ Step3 回到檔案 =>
 
 圖片LINK：  https://drive.google.com/file/d/1bkxuIaljl3bcDTHHglZImg8FuqRI7IK-/view?usp=drive_link
 
+
+
+
+
+#### DML語法：
+
 ```建立資料庫並設定PRIMARY檔案及LOG檔案
 。建立資料庫並設定PRIMARY檔案及LOG檔案
 CREATE DATABASE [圖書借閱管理5-5]​
@@ -731,7 +737,6 @@ PRIMARY​
       (name=P1,filename='C:\5-5\P1.MDF',size=5MB,maxsize=5GB,filegrowth=10%) ​
 
 LOG ON​
-
       (name=Log1,filename='C:\5-5\Log1.LDF',size=5MB,maxsize=5GB,filegrowth=10%)​
 ```
 
